@@ -1,0 +1,56 @@
+body{
+    font-family: sans-serif;
+    margin-top: 0;
+    margin-bottom: 0; 
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+div.cont{
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+header{
+    border: 1px solid #c4c4c4;
+    padding: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;
+}
+
+header h1{
+    color:#707070;
+    text-transform: uppercase;
+}
+
+nav button{
+    background-color: #f5f5f5;
+    color: #707070;
+    border: 1px solid #c4c4c4;
+    padding: 1.1rem;
+    font-size: 1.5rem;
+    margin-right: .7rem;
+}
+
+nav button.active{
+    background-color: #25dfe6;
+    color: #FFF;
+}
+
+ul{
+    list-style:none;
+}
+
+ul li::before{
+    content: "\2022";
+    color: #707070; 
+}
+/* endre fergen på listepunktet hentet fra:
+https://www.w3schools.com/howto/howto_css_bullet_color.asp */
+
+main{
+    padding-left: 2rem;
+    border: 1px solid #c4c4c4;
+}

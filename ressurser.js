@@ -94,3 +94,37 @@ const resources = [
         ]
     },
 ]
+
+const html = document.getElementById("htmlbtn")
+const css = document.getElementById("cssbtn")
+const script = document.getElementById("scriptbtn")
+const react = document.getElementById("reactbtn")
+const CMS = document.getElementById("CMSbtn")
+
+let htmlvis = document.getElementById("html").style.visibility
+let cssvis = document.getElementById("css").style.visibility 
+let scriptvis = document.getElementById("javascript").style.visibility
+let reactvis = document.getElementById("react").style.visibility
+let CMSvis = document.getElementById("CMS").style.visibility
+
+let show=""
+
+html.addEventListener("click", function open(){
+    html.classList.add("active")
+
+    show = document.querySelector("#html.active")
+    if(show == null){
+        
+        htmlvis += "visible"
+        console.log(hei)
+
+        cssvis += "hidden"
+        scriptvis += "hidden"
+        reactvis += "hidden"
+        CMSvis += "hidden"
+    }
+        else{
+            console.log("hadet")
+        }
+
+    })
