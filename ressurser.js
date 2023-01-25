@@ -112,7 +112,7 @@ function display(event){
 
     resources.map((cat) =>{
         document.querySelector(`#${cat.category.split(" ").join("")}`).classList.add("inactive")   
-        //legger til denne linje slik at knapper som tidligere er aktive/ ikke inactive, nå blir active, 
+        //legger til denne linje slik at knapper som tidligere er aktive/ ikke inactive, nå blir inactive, 
         //slik at det kun er gjeldende fane som er blå.
 
         if (cat.category.split(" ").join("") === event.target.id) {
