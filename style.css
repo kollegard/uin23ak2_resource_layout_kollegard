@@ -1,3 +1,10 @@
+:root{
+    --blue:#25dfe6;
+    --darkblue: #18acb4;
+    --lightGrey: #c4c4c4;
+    --darkGrey: #707070;
+}
+
 body{
     font-family: sans-serif;
     margin-top: 0;
@@ -14,43 +21,129 @@ div.cont{
 }
 
 header{
-    border: 1px solid #c4c4c4;
+    border: 1px solid var(--lightGrey);
     padding: 2rem;
     margin-top: 4rem;
     margin-bottom: 2.5rem;
 }
 
 header h1{
-    color:#707070;
+    color: var(--darkGrey);
     text-transform: uppercase;
 }
 
-nav button{
-    background-color: #f5f5f5;
-    color: #707070;
-    border: 1px solid #c4c4c4;
+button{
+    background-color: var(--blue);
+    color: #FFF;
     padding: 1.1rem;
     font-size: 1.5rem;
     margin-right: .7rem;
+    border-left: 1px solid var(--blue);
+    border-right: 1px solid var(--blue);
+    border-top: 1px solid var(--blue);
+    border-bottom: none;
 }
 
-nav button.active{
-    background-color: #25dfe6;
-    color: #FFF;
+button.inactive{
+    background-color: #f5f5f5;
+    color: var(--darkGrey);
+    border-left: 1px solid var(--lightGrey);
+    border-right: 1px solid var(--lightGrey);
+    border-top: 1px solid var(--lightGrey);
+    border-bottom: none;
 }
 
 ul{
     list-style:none;
+    height: auto;
 }
 
 ul li::before{
     content: "\2022";
-    color: #707070; 
+    color: var(--darkGrey); 
+    margin: .5rem;
 }
-/* endre fergen på listepunktet hentet fra:
+/* endre fargen på listepunktet hentet fra:
 https://www.w3schools.com/howto/howto_css_bullet_color.asp */
-
-main{
-    padding-left: 2rem;
-    border: 1px solid #c4c4c4;
+ul li a{
+    color: var(--blue);
+    margin-top:1rem;
 }
+
+
+article{
+    padding-left: 2rem;
+    border-left: 1px solid var(--lightGrey);
+    border-bottom: 1px solid var(--lightGrey);
+    border-right: 1px solid var(--lightGrey);
+    border-top: 5px solid var(--blue);
+    height:auto;
+
+}
+
+h2{
+    color: var(--darkGrey);
+    text-transform: uppercase;
+}
+
+article p{
+    color: var(--darkGrey);
+}
+
+@media only screen and (max-width: 720px){
+    div.cont{
+        width: 100%;
+        max-width: 90%;
+    }
+
+    #nav{
+        width:100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    header{
+        border: 1px solid var(--darkGrey);
+    }
+
+    button{
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    button.inactive{
+        border: 1px solid var(--darkGrey);
+    }
+
+    article{
+        border: 1px solid var(--darkGrey);
+        margin-bottom: 3rem;
+        font-size: 20px;
+        margin-top:3rem;
+        padding: 0 2rem
+    }
+
+    article h2{
+        font-size: 32px;
+    }
+ 
+    ul{
+        padding: 0;
+    }
+
+    ul li{
+        padding: 1rem 1rem;
+    }
+
+    ul li a{
+        color: var(--darkblue);
+    }
+
+    
+}
+
+
+
+  

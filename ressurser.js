@@ -95,36 +95,37 @@ const resources = [
     },
 ]
 
-const html = document.getElementById("htmlbtn")
-const css = document.getElementById("cssbtn")
-const script = document.getElementById("scriptbtn")
-const react = document.getElementById("reactbtn")
-const CMS = document.getElementById("CMSbtn")
+let show = ""
+let navigation = ""
 
-let htmlvis = document.getElementById("html").style.visibility
-let cssvis = document.getElementById("css").style.visibility 
-let scriptvis = document.getElementById("javascript").style.visibility
-let reactvis = document.getElementById("react").style.visibility
-let CMSvis = document.getElementById("CMS").style.visibility
+resources.map((meny) =>{
+    navigation += `<button id="${meny.category.split(" ").join("")}" onclick="display(event)" class="inactive">${meny.category}</button>`
+    //fikk veiledning av studass til display(event)
+    //event er en innebygd funksjon, som tillater brukeren å se alt som skjer med det event står ved. 
+    //man kan i tillegg lage stier, slik som i if-testen nedenfor
 
-let show=""
+    //meny.category.split.join er hentet fra: https://www.geeksforgeeks.org/how-to-remove-spaces-from-a-string-using-javascript/
+})
 
-html.addEventListener("click", function open(){
-    html.classList.add("active")
+function display(event){
+    show=""
 
-    show = document.querySelector("#html.active")
-    if(show == null){
-        
-        htmlvis += "visible"
-        console.log(hei)
+    resources.map((cat) =>{
+        document.querySelector(`#${cat.category.split(" ").join("")}`).classList.add("inactive")   
+        //legger til denne linje slik at knapper som tidligere er aktive/ ikke inactive, nå blir active, 
+        //slik at det kun er gjeldende fane som er blå.
 
-        cssvis += "hidden"
-        scriptvis += "hidden"
-        reactvis += "hidden"
-        CMSvis += "hidden"
-    }
-        else{
-            console.log("hadet")
+        if (cat.category.split(" ").join("") === event.target.id) {
+            //fikk veiledning av studass til å lage linjen over.
+            show += `<ul><h2>${cat.category}</h2>
+            <p>${cat.text}</p>`
+                cat.sources.map(source => {show += 
+                `<li><a href ="${source.url}">${source.title}</a></li>`})
+            show += `</ul></article>`
+            document.querySelector(`#${cat.category.split(" ").join("")}`).classList.toggle("inactive")
         }
+})
+document.getElementById("info").innerHTML = show
+}
 
-    })
+document.getElementById("nav").innerHTML = navigation
